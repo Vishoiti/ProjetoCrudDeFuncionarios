@@ -1,7 +1,7 @@
 import os
 os.system("cls")
 
-from subalgoritmo import exibir_menu
+from subalgoritmo import exibir_menu, inserir_dados
 
 crud = {}
 
@@ -15,4 +15,5 @@ while True:
         case "0":
             print("O Programa terminou!")
             break
-
+        case "1":
+            inserir_dados(crud)
