@@ -90,3 +90,25 @@ def editar_funcionario(c:dict) -> None:
     print("====================")
     print("Editado com sucesso!")
     print("====================")
+
+def excluir_funcionario(c: dict) -> None:
+    print("""
+        EXCLUINDO FUNCIONÁRIO 
+       ======================   
+        """)
+    funcionario = exibir_dados(c)
+    if funcionario == None:
+        return
+
+    cpf = funcionario['cpf']
+
+    escolha = input("Confirmar a exclusão do funcionário  [S/N]?: ").lower()
+    if escolha == "s":
+        del c[cpf]
+        print("""
+        =====================
+        Funcionário excluído!
+        =====================
+        """)
+    else:
+        print("Exclusão cancelada . . .")
