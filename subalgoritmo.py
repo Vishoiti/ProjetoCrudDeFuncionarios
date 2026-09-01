@@ -45,7 +45,6 @@ def exibir_dados(c:dict) -> None:
     if cpf in c:
         funcionario = c[cpf]
 
-
         print("""
         =====================""")
         print(f"CPF.....: {funcionario['cpf']}")
@@ -53,14 +52,15 @@ def exibir_dados(c:dict) -> None:
         print(f"Salário.: {funcionario['salario']}")
         print("""
         =====================""")
-
+        return funcionario
+    
     else:
         print("""
             ==========================
              Funcionário inexistente!
             ==========================
             """)
-
+        return None
 
 def consultar_funcionario(c: dict) -> None:
     print("""
@@ -69,3 +69,24 @@ def consultar_funcionario(c: dict) -> None:
     """)
     exibir_dados(c)
 
+def editar_funcionario(c:dict) -> None:
+    print("""
+        EDITANDO FUNCIONÁRIO 
+       ======================   
+        """)
+    funcionario = exibir_dados(c)
+    if funcionario == None:
+        return
+    
+    print("---------------------------")
+    print("Edite os campos:")
+    print("---------------------------")
+    novo_nome = str(input("Nome.....: "))
+    novo_salario = float(input("Salário.: "))
+
+    funcionario['nome'] = novo_nome
+    funcionario['salario'] = novo_salario
+
+    print("====================")
+    print("Editado com sucesso!")
+    print("====================")

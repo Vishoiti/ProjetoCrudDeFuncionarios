@@ -1,7 +1,7 @@
 import os
 os.system("cls")
 
-from subalgoritmo import exibir_menu, inserir_dados, consultar_funcionario
+from subalgoritmo import exibir_menu, inserir_dados, consultar_funcionario, editar_funcionario
 
 crud = {}
 
@@ -19,3 +19,5 @@ while True:
             inserir_dados(crud)
         case "2":
             consultar_funcionario(crud)
+        case "3":
+            editar_funcionario(crud)
