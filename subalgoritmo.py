@@ -12,28 +12,31 @@ def exibir_menu() -> None:
 
 def inserir_dados(c: dict) -> None:
     cpf = int(input("CPF......: "))
+
     if cpf in c:
         print("""
              ==========================   
                FUNCIONÁRIO JÁ EXISTE!
              ==========================
         """)
-    else:
-        nome = str(input("Nome......: "))
-        salario = float(input("Salário.: "))
-
-    print("""
-       =========================   
-        CADASTRADO COM SUCESSO!
-       ========================= 
-        """)
+        return
+    
+    nome = str(input("Nome......: "))
+    salario = float(input("Salário.: "))
 
     funcionario = {
         "CPF......:" : cpf,
         "Nome......:" : nome,
         "Salário.:" : salario
     }
-    return funcionario
+
+    c[cpf] = funcionario
+
+    print("""
+       =========================   
+        CADASTRADO COM SUCESSO!
+       ========================= 
+        """)
 
 
     
