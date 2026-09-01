@@ -29,7 +29,7 @@ def inserir_dados(c: dict) -> None:
         "nome": nome,
         "salario": salario
     }
-    
+
     c[cpf] = funcionario
 
     print("""
@@ -38,15 +38,13 @@ def inserir_dados(c: dict) -> None:
         ========================= 
         """)
 
-def consultar_funcionario(c: dict) -> None:
-    print("""
-    CONSULTANDO FUNCIONÁRIO 
-    =========================   
-    """)
+
+def exibir_dados(c:dict) -> None:
     cpf = int(input("CPF.....: "))
 
     if cpf in c:
         funcionario = c[cpf]
+
 
         print("""
         =====================""")
@@ -54,10 +52,20 @@ def consultar_funcionario(c: dict) -> None:
         print(f"Nome....: {funcionario['nome']}")
         print(f"Salário.: {funcionario['salario']}")
         print("""
-            =====================""")
+        =====================""")
+
     else:
         print("""
             ==========================
              Funcionário inexistente!
             ==========================
-        """)
+            """)
+
+
+def consultar_funcionario(c: dict) -> None:
+    print("""
+    CONSULTANDO FUNCIONÁRIO 
+    =========================   
+    """)
+    exibir_dados(c)
+
