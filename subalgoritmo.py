@@ -25,19 +25,39 @@ def inserir_dados(c: dict) -> None:
     salario = float(input("Salário.: "))
 
     funcionario = {
-        "CPF......:" : cpf,
-        "Nome......:" : nome,
-        "Salário.:" : salario
+        "cpf": cpf,
+        "nome": nome,
+        "salario": salario
     }
-
+    
     c[cpf] = funcionario
 
     print("""
-       =========================   
+        =========================   
         CADASTRADO COM SUCESSO!
-       ========================= 
+        ========================= 
         """)
 
+def consultar_funcionario(c: dict) -> None:
+    print("""
+    CONSULTANDO FUNCIONÁRIO 
+    =========================   
+    """)
+    cpf = int(input("CPF.....: "))
 
-    
+    if cpf in c:
+        funcionario = c[cpf]
 
+        print("""
+        =====================""")
+        print(f"CPF.....: {funcionario['cpf']}")
+        print(f"Nome....: {funcionario['nome']}")
+        print(f"Salário.: {funcionario['salario']}")
+        print("""
+            =====================""")
+    else:
+        print("""
+            ==========================
+             Funcionário inexistente!
+            ==========================
+        """)
