@@ -112,3 +112,19 @@ def excluir_funcionario(c: dict) -> None:
         """)
     else:
         print("Exclusão cancelada . . .")
+
+def listar_funcionario(c: dict) -> None:
+    print(f"""
+    {'CPF':<15}{'NOME':<20}{'SALÁRIO':>10}    
+    ============================================              
+""")
+
+    for funcionario in c.values():
+        cpf = funcionario['cpf']
+        nome = funcionario['nome']
+        salario = funcionario['salario']
+        print(f"   {cpf:<15}{nome:<20}R$ {salario:>7.2f}")
+
+    print("""
+    ============================================
+    """)
